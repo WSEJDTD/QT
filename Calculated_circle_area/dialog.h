@@ -15,6 +15,11 @@ public:
     explicit Dialog(QWidget *parent = nullptr);
     ~Dialog();
 
+private slots:
+    void on_radiusEdit_textChanged(const QString &arg1);
+
+    void on_pushButton_clicked();
+
 private:
     Ui::Dialog *ui;
 };

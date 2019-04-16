@@ -1,3 +1,4 @@
+static double PI=3.1416;
 #include "dialog.h"
 #include "ui_dialog.h"
 
@@ -11,4 +12,25 @@ Dialog::Dialog(QWidget *parent) :
 Dialog::~Dialog()
 {
     delete ui;
+}
+
+void Dialog::on_radiusEdit_textChanged(const QString &arg1)
+{
+    bool ok;
+    QString tempStr;
+    QString valueStr=ui->radiusEdit->text();
+    int valueInt=valueStr.toInt(&ok);
+    double area=valueInt*valueInt*PI;
+    ui->areaLabel_2->setText(tempStr.setNum(area));
+}
+
+
+void Dialog::on_pushButton_clicked()
+{
+    bool ok;
+    QString tempStr;
+    QString valueStr=ui->radiusEdit_2->text();
+    int valueInt=valueStr.toInt(&ok);
+    double area=valueInt*valueInt*PI;
+    ui->areaLabel_4->setText(tempStr.setNum(area));
 }
